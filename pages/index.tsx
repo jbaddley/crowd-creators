@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Logo from '../assets/cc-logo.png'
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <img className={styles.logo} src={Logo.src} /> 
         <h1 className={styles.title}>
           Welcome to Crowd Creators
         </h1>
