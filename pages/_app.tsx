@@ -1,12 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import { UserProvider } from '@auth0/nextjs-auth0';
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { SessionProvider } from "next-auth/react";
 
 function App({ Component, pageProps }: AppProps) {
-  return <UserProvider>
-    <a href="/api/auth/login">Login</a>
+  return (
+    <SessionProvider session={(pageProps as any).session}>
       <Component {...pageProps} />
-    </UserProvider>
+    </SessionProvider>
+  );
 }
 
-export default App
+export default App;
